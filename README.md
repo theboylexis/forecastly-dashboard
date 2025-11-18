@@ -1,20 +1,48 @@
-🌦️ Weather Dashboard
+# 🌦️ Weather Dashboard
 
-A sleek, responsive Weather Dashboard that shows real-time weather for any city.
-Built using vanilla HTML, CSS, and JavaScript, focusing on clean UI and live API integration.
+A sleek, responsive Weather Dashboard that displays **real-time weather updates** for any city.  
+Built with **HTML, CSS, and JavaScript**, focusing on clean UI, async API calls, and frontend fundamentals.
 
-✨ Features
+---
 
-🔍 Search any city – Get accurate weather data instantly
-🌡️ Weather Details – Temperature, humidity, wind speed, conditions
-⏱️ Live Updates – Uses OpenWeatherMap for real-time data
-📱 Responsive Design – Works on desktop, tablet, and mobile
-🎨 Clean & Modern UI – Smooth layout with icons and visuals
+## ✨ Features
 
-🛠️ Tech Stack
+🔍 **Search Any City** – Instantly fetch weather data  
+🌡️ **Full Weather Info** – Temperature, humidity, wind speed, weather conditions  
+⏱️ **Real-Time API Calls** – Powered by OpenWeatherMap  
+📱 **Responsive Design** – Works on all screen sizes  
+🎨 **Modern & Clean UI** – Intuitive layout with icons and visuals  
 
-📄 HTML5 – Base structure & components
-🎨 CSS3 – Styling & responsive layout
-✨ JavaScript (ES6+) – Logic & interactivity
-🌐 AJAX / Fetch API – API request handling
-☁️ OpenWeatherMap API – Weather data provider
+---
+
+## 🛠️ Tech Stack
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="60" alt="HTML5"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="60" alt="CSS3"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="60" alt="JavaScript"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="60" alt="AJAX / Fetch API"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://avatars.githubusercontent.com/u/17469809?s=200&v=4" width="60" alt="OpenWeatherMap"/>
+</p>
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/weather-dashboard.git
+cd weather-dashboard
+
+2️⃣ Open the Project
+
+No build tools needed — just open index.html with Live Server or any browser.
+
+3️⃣ Add Your API Key
+
+Inside your JavaScript file, set your OpenWeatherMap API key:
+const apiKey = "YOUR_API_KEY";
