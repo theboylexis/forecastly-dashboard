@@ -23,34 +23,7 @@ Styling: Tailwind CSS
 
 API: OpenWeatherMap
 
-Deployment: Netlify
+Deployment: Vercel
 
-🚀 Getting Started
-Clone the repository
-git clone https://github.com/theboylexis/weather-dashboard.git
-cd weather-dashboard
-
-Install dependencies
-npm install
-
-Run locally
-npm run dev   # if using Vite
-# or
-npm start     # if using Create React App
-
-Build for production
-npm run build
-
-🌟 Future Roadmap
-
-📆 Add 5-day forecast view
-
-🗺️ Display weather by geolocation (current position)
-
-🎨 Dark/light mode toggle
-
-📊 Add charts for temperature/humidity trends
-
-🤝 Contributing
 
 Contributions are welcome! If you’d like to suggest an improvement, feel free to open an issue or submit a pull request.
