@@ -32,9 +32,8 @@ Built with **HTML, CSS, and JavaScript**, focusing on clean UI, async API calls,
 ---
 
 ## 🚀 Getting Started
+ 1️⃣ Clone the Repository
 
-### 1️⃣ Clone the Repository
-```bash
 git clone https://github.com/yourusername/weather-dashboard.git
 cd weather-dashboard
 
