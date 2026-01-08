@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forecastly - Your premium weather dashboard with real-time forecasts">
+  <meta name="keywords" content="weather, forecast, dashboard, temperature, humidity">
+  <meta property="og:title" content="Forecastly | Premium Weather Dashboard">
+  <meta property="og:description" content="Beautiful, real-time weather forecasts for any city worldwide">
+  <title>Forecastly | Weather Dashboard</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Weather Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+
+<body>
+  <div class="app">
+    <!-- Background Gradient Orbs -->
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo">
+        <span class="header__icon">🌤️</span>
+        <h1 class="header__title">Forecastly</h1>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle__icon theme-toggle__icon--light">☀️</span>
+        <span class="theme-toggle__icon theme-toggle__icon--dark">🌙</span>
+      </button>
+    </header>
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Search Section -->
+      <section class="search-section">
+        <div class="search-container">
+          <input type="text" class="search-input" id="searchInput" placeholder="Search for a city..."
+            autocomplete="off">
+          <button class="search-btn" id="searchBtn" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <!-- Error Message -->
+      <div class="error-message" id="errorMessage">
+        <span class="error-message__icon">😕</span>
+        <p class="error-message__text">City not found. Please try again.</p>
+      </div>
+      <!-- Loading State -->
+      <div class="loading" id="loading">
+        <div class="loading__spinner"></div>
+        <p class="loading__text">Fetching weather data...</p>
+      </div>
+      <!-- Weather Display -->
+      <div class="weather-content" id="weatherContent">
+        <!-- Current Weather Card -->
+        <section class="current-weather glass-card">
+          <div class="current-weather__header">
+            <div class="current-weather__location">
+              <h2 class="current-weather__city" id="cityName">--</h2>
+              <p class="current-weather__date" id="currentDate">--</p>
+            </div>
+            <button class="favorite-btn" id="favoriteBtn" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="current-weather__main">
+            <div class="current-weather__temp-group">
+              <i class="current-weather__icon wi" id="weatherIcon"></i>
+              <div class="current-weather__temp">
+                <span class="current-weather__temp-value" id="temperature">--</span>
+                <span class="current-weather__temp-unit">°C</span>
+              </div>
+            </div>
+            <p class="current-weather__description" id="weatherDescription">--</p>
+          </div>
+          <div class="current-weather__details">
+            <div class="detail-item">
+              <div class="detail-item__icon">💧</div>
+              <div class="detail-item__info">
+                <span class="detail-item__value" id="humidity">--%</span>
+                <span class="detail-item__label">Humidity</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-item__icon">💨</div>
+              <div class="detail-item__info">
+                <span class="detail-item__value" id="windSpeed">-- km/h</span>
+                <span class="detail-item__label">Wind Speed</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-item__icon">👁️</div>
+              <div class="detail-item__info">
+                <span class="detail-item__value" id="visibility">-- km</span>
+                <span class="detail-item__label">Visibility</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-item__icon">🌡️</div>
+              <div class="detail-item__info">
+                <span class="detail-item__value" id="feelsLike">--°C</span>
+                <span class="detail-item__label">Feels Like</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Hourly Forecast -->
+        <section class="hourly-forecast glass-card">
+          <h3 class="section-title">Hourly Forecast</h3>
+          <div class="hourly-forecast__scroll" id="hourlyForecast">
+            <!-- Hourly items will be injected by JS -->
+          </div>
+        </section>
+        <!-- 5-Day Forecast -->
+        <section class="daily-forecast glass-card">
+          <h3 class="section-title">5-Day Forecast</h3>
+          <div class="daily-forecast__list" id="dailyForecast">
+            <!-- Daily items will be injected by JS -->
+          </div>
+        </section>
+        <!-- Favorites Sidebar -->
+        <aside class="favorites glass-card">
+          <h3 class="section-title">Favorite Cities</h3>
+          <ul class="favorites__list" id="favoritesList">
+            <!-- Favorite items will be injected by JS -->
+          </ul>
+          <p class="favorites__empty" id="favoritesEmpty">No favorites yet. Click the ❤️ to save a city!</p>
+        </aside>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Powered by <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a></p>
+    </footer>
+  </div>
+  <!-- Scripts -->
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
